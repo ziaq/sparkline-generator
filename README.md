@@ -1,7 +1,7 @@
 ## Description
 
 <p align="center">
-  <img src="sparkline.png" alt="Sparkline">
+  <img src="sparkline.png" alt="Sparkline" width="400">
 </p>
 
 Microservice for generating [sparklines](https://en.wikipedia.org/wiki/Sparkline) based on [OHLCV](https://docs.amberdata.io/docs/ohlcv-1) data, which is sourced from various providers using only the Ethereum token address.
