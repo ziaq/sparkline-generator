@@ -21,7 +21,7 @@ export interface Config {
 export default registerAs(
   CONFIG,
   (): Config => ({
-    microserviceName: process.env.MICROSERVICE_NAME,
+    microserviceName: 'sparkline-generator',
     nodeEnv: process.env.NODE_ENV as Config['nodeEnv'],
     serverIp: process.env.SERVER_IP,
     serverPort: Number(process.env.SERVER_PORT),
