@@ -6,11 +6,10 @@
 
 Microservice for generating [sparklines](https://en.wikipedia.org/wiki/Sparkline) based on [OHLCV](https://docs.amberdata.io/docs/ohlcv-1) data, which is sourced from various providers using only the Ethereum token address.
 
-Developed with Nest.js, Puppeteer.
-
 Configured to work with the [static-assets-server](https://github.com/ziaq/static-assets-server). Key features include:
 
--   Generating sparklines
+-   Generating sparklines based on token address
+-   Scraping data from websites with charts
 -   Uploading sparklines to the static-assets-server
 -   Managing the deletion of outdated sparklines
 -   Managing updates of database records associated with sparklines
