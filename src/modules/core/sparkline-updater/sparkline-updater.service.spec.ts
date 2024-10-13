@@ -1,15 +1,8 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { Redis } from 'ioredis';
-import { lock, ReleaseFunction } from 'simple-redis-mutex';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { TokenAddress } from '../../../models/token-address.model';
-import { TrendingNameInDb } from '../../../models/trending-list-names.model';
 import { REDIS_PROVIDER_MAIN_8 } from '../../resources/redis/redis-provider.constants';
-import { RedisProvider } from '../../resources/redis/redis-provider.service';
 import { CustomErrorHandler } from '../../shared/custom-error-handler/custom-error-handler.service';
 import { CUSTOM_LOGGER } from '../../shared/custom-logger/custom-logger.constants';
-import { CustomLogger } from '../../shared/custom-logger/custom-logger.service';
 import { MethodFreezeAlert } from '../../shared/method-freeze-alert/method-freeze-alert.service';
 
 import { ChartDataFetcher } from './sparkline-building/chart-data-fetcher/chart-data-fetcher.service';
@@ -75,7 +68,7 @@ describe('SparklineUpdater', () => {
 
   it('should log an error if there is a problem with a DB', async () => {
     redisInstanceMock.get.mockResolvedValue(null);
-    
+
     await service.buildAndStore('0x', 'buyTechTrending');
     expect(errorHandlerMock.logAndNotifyInTg).toHaveBeenCalled();
   })
